@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/new">New message</a> &emsp; <a href="/disclaimer">Disclaimer</a> <br><br>
+    <h1><%=title%></h1>
+    Welcome to Overheard SPIS! Feel free to add some of your favorite quotes, comments, or ideas from SPIS or SPIS-related events.
+    <br><br>
+    <ul>
+      <%
+      if(messageObjs.length!=0){
+        var i = 1;
+        messageObjs.forEach(function(data){
+      %>
+        <li>
+          <div><sub><%=format(data.createdAt, {addSuffix: true})%></sub></div>
+          <div><%=data.text%></div>
+          <i><%=data.author%></i>
+          <br>
+
+        </li>
+      <%  i++; }) %>
+      <% } else{ %>
+        <li>
+          <div><sub>Welcome!</sub></div>
+          <div>What is recursion?</div>
+          <i>Did you mean, "recursion?"</i>
+        </li>
+      <% } %>
+    </ul>
+
+  </body>
+</html>

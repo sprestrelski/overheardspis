@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+<a href="/">Back</a><br><br>
+<form method="POST" action="/new">
+    <h1>New quote</h1>
+    <p>
+    Use the following form to submit a quote. 
+    Please use an identifiable name in the "Submitted by" field. Quotes will show anonymously on the <a href="/disclaimer">website</a>.<br><br>
+    </p>
+    <input type="text" name="message" id="message" placeholder="Enter a quote" required>
+    <input type="text" name="author" id="author" placeholder="- Quote attribute" required>
+    <input type="text" name="added" id="added" placeholder="Submitted by" required>
+    <input type="submit" value="Submit">
+</form>
